@@ -1,0 +1,56 @@
+/* Menggunakan font Inter sebagai default */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Transisi halus untuk pengalaman yang lebih modern */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Style untuk scrollbar kustom */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Style untuk modal */
+.modal-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
+}
+.modal-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Style untuk kalender */
+.calendar-day.selected { background-color: #2563eb; color: white; border-radius: 50%; }
+.calendar-day.taken { background-color: #fee2e2; color: #b91c1c; text-decoration: line-through; cursor: not-allowed; border-radius: 50%; }
+.dark .calendar-day.taken { background-color: #450a0a; color: #f87171; }
+.calendar-day.today { border: 2px solid #1d4ed8; border-radius: 50%; }
+
+/* Sticky header untuk tabel kinerja dengan visual yang lebih baik */
+#kinerjaManajemenTable thead th, #kinerjaMasinisTable thead th {
+    z-index: 20;
+    border-bottom: 2px solid #e2e8f0;
+}
+.dark #kinerjaManajemenTable thead th, .dark #kinerjaMasinisTable thead th {
+    border-bottom: 2px solid #475569;
+}
+
+/* Animasi untuk Kinerja Select */
+.kinerja-select:hover {
+    transform: scale(1.1);
+}
+.kinerja-select {
+     transition: transform 0.2s ease;
+}
