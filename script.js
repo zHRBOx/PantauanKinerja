@@ -557,13 +557,15 @@ function renderCalendar() {
         const managementCtCount = ctOnDate.filter(l => managementData.some(m => m.nipp === l.nipp)).length;
         const masinisCtCount = ctOnDate.filter(l => masinisData.some(m => m.nipp === l.nipp)).length;
 
-        if (applicantIsManagement && managementCtCount >= 1) {
+        // START: LOGIKA BARU
+        if (applicantIsManagement && managementCtCount >= 2) {
             dayEl.classList.add('taken');
             dayEl.disabled = true;
-        } else if (!applicantIsManagement && masinisCtCount >= 2) {
+        } else if (!applicantIsManagement && masinisCtCount >= 3) {
             dayEl.classList.add('taken');
             dayEl.disabled = true;
         }
+        // END: LOGIKA BARU
 
         if (tempSelectedDates.includes(dateStr)) {
             dayEl.classList.add('selected');
@@ -975,8 +977,10 @@ form.addEventListener('submit', function(event) {
             const managementOnDate = ctOnDate.filter(l => managementData.some(m => m.nipp === l.nipp)).length;
             const masinisOnDate = ctOnDate.filter(l => masinisData.some(m => m.nipp === l.nipp)).length;
             
-            if (isManagement && managementOnDate >= 1) return true;
-            if (!isManagement && masinisOnDate >= 2) return true;
+            // START: LOGIKA BARU
+            if (isManagement && managementOnDate >= 2) return true;
+            if (!isManagement && masinisOnDate >= 3) return true;
+            // END: LOGIKA BARU
             return false;
         });
 
