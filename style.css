@@ -54,3 +54,37 @@ body {
 .kinerja-select {
      transition: transform 0.2s ease;
 }
+
+/* Style untuk tombol navigasi menu */
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #475569; /* slate-600 */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dark .nav-button {
+    color: #cbd5e1; /* slate-300 */
+}
+
+.nav-button:hover {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #1e293b; /* slate-800 */
+}
+
+.dark .nav-button:hover {
+    background-color: #334155; /* slate-700 */
+    color: #f8fafc; /* slate-50 */
+}
+
+.nav-button.active-nav {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+}
+.dark .nav-button.active-nav {
+    background-color: #3b82f6;
+    color: white;
+}
