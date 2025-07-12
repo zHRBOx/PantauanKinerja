@@ -16,9 +16,13 @@ const dayNames = ["M", "S", "S", "R", "K", "J", "S"];
 let calendarCurrentDate = new Date();
 let tempSelectedDates = [];
 
-const DEFAULT_DROPBOX_TOKEN = 'sl.u.AF10KZMGx-Cqjwg-0-U-wjbADfNq55AM9AWBtszYJHTAdieG2MqPlmmHLFtcrsDOsyhtG495ClK5X3Y8h0ivnEEDqid7buFHCAK-7vy2cJljfxBIxHNO5Hniun4zXWvuMRQsdCoutC3_DYeTlo866gE5oH9LpCq_V2lDmwh0ylsfXzgbpjVvk9GwyTkDJg_lYV9-vg5L_jLPcWjMndpTENrVaTStkr3fepq6xT7Y7kMpJKqEt9EuaP7c25pn0jiJTtwoI0x6ekQn2qLAn8ajX3MD_9hmfDTalpJH1I_D72ftt5UW-eU2sOZetnXAd7ycG_r_fpTrITBkQrDRiUNlB0o8p1mq5_urIQwvl2FgXupdxP_Dlc7g5Sx_t17enp-3PexHiZBJrKyD2um8glBG9Gg5nVg2tnFibY9YNz4LM-yaUK3GS01kOlTtE-sZ2I1A8vqTdtwRaw7u-WOU9LaE2_BBNGOe2byWNW_ZSNbcEnR54UY7ug4uXKMpG6DJ7CA6yaHnrYz_FQLyDNs_XdCXEGcvQEluLEnlXz2IW4dCxzkeojSOzh_s2p2XZtZOSHRPHGhbpn2HIuzJlkUKws0dw_WuvxyMJ-RqboAf_gGBam8pmaOOGi8KmLwSTz7Ec0sBd4EiVVcazgTJZaAYneijNOL8Je8GVxStvYZ5PQaEDybzbXnIXOtW2hibWhTzeUAcVHXXdMIRclU2DFfYGTzkWEnyUmM1rm_pHPwyorlo7Dpbr4qxpVlp4LiLtSzBlQYXqoCVSkWKMipNIAzgQkKHX-lJ2fmYGOzb-Z5TCe0AQFBzeg1IAHR3_IuhA-pHCc6C3RrqNwc9tPAWjQZNIMip_Y7SWpB_cA57lqT5c5pQth5sD3TfE6G7M8yFyHvfsIoHzpfohAUJ02RFuW7ULJwtmMoCTEbVr25IakB1Gp0T0a0CAax59qsoJ6EOvErW9ifMO-6qcPX74YlfkV5pLreE44cDxBA1-5oano50pR1pwqkTZ5Ses4h2Ev8fkl_UOd60rmFP_RuEud5Y1iSVix1prsOCv-B_JjM4Kq9WRzztlihhXt3wn0MH-lLJsu2NlXgHcHL7mMVeddEjcMPhb4yV5e-3alsJhhTOEu3YR18j8UF9mFJwuztBrAh0h6yU6noJvHIVvZFUeWjnBoYbbvhYlAdZamiaIV93tTbIExHjr6UKys4_K5W0QlnSdhbtrgL5hYu3M_u9_0BEYa1vI0l4_4r8EaFWaSab8hlREOQl3EIhd6UuTf4DVlZyJ2WvHBE1QxXud_lLpSs3Ow70FRXJ4lrC';
+const DEFAULT_DROPBOX_TOKEN = 'sl.u.AF3Q09E2PLjQDZPx5gMEDjhS6yGx67soBHsfWGYcUpjOJ8PvPq7TxXKnytdbZI3R_b3YqWEf495XtqbX9xt0xssudSTB1sf4uc68Jf0IMmgNQmsKkgJugRs0AfhdFN5GfIAJASfiQFSDhRsdSpK1E3IKp_niTczAHD3EwizTxuEdCD6Yzmz9aV-7yve0rd5Z6D_FK2UBRmZfXHN_9GZ5DyMQTuQ2-Ihh2T_xcD63y6CXNPFvZqLX1R-ExiDE6ib_xqUk2Enm8LzbdmFtWGnz9L1XmopM51aa65Vcm3AFgSkWkdKfPrbbfoN5r1e8rWpSj2-i4LBVtnJ0jFI1iBVr0OImusLyHCIwUq7dSUbDTpWsqQKutT411tUruRTHk4imDytQWLQBg9weAqtUOD39XpZ_2zvN8lCsxQZMDu7xTmvb7SbD5DD1I_JuYpvnqA8JGwlkhrASiv5Dgpk_8F7gJt7FPhEgl_-57KMzLPfe67Zv8vdzrSqkfqI1UMLgpGP4xrBTHuaCDKunGfnwjQOnD59skFbf0D6YJ5sjrGZTVJ-87BzGE5IKfZj5tc9xlU68H4Ta_peX0tJdcaaeFc6mc7jH_muu63V7UK3nDTGYF7Qetgy7qtzBBlbNdKcOfB-uTkX2E6vHxnAfjawpwV3v8nX6WWv3yJAtCc3LY83clnxwZSgaUktbmgVVu19UZnE56AmP4MW6nPSOo2a_oCr-7nznsHMsshD5m6WR5iWXg-y8dVSZxT1t1ZpN1ZKsXRUHkRNnVQfS8Z7KG-lExwik4q6hl4aH0I6Ofc8dDk4fRbA5ZR0E_GaO9uX-j9sXo2Mt-77qYgWq4Cia3nnGFpE-ZDDe14rcY2yrZWset74iPMfNToY2bJylU0TO_Eb9RiBrbtCF-BW7NnE4ThTs176sojUZxIlTD8dHs4iwkVX_x6GZyYyZQf9kVHmWVA78gew7BW3fmBSD9OgGGNPZmprZ8r47o5pHnxmrj-fYWD6j0a3DKATjrq6jtAs47J8RB2ukj8xvT-7Orp_eFjnZGsxhZc_cqnGROkNj24-znvp2F62sKg_JszMRQA-NZ2zHAEYDssF4GWdX744sSQQK_GSjXTbVzkvcA8t_MBnboo1Ji0NIQIYGmHXdxJjnuftx4dXSZ4JcJSS-hIwnEGd6K08Uh9DiUvgaSI5YZmCQbxggnrhAzZ2e0_DfVS8A4yZ21vagPPGYLrUkIYGcxtcEPGvBBRylYE_oX6A1xTuyxr7wjA5cN4NKjd4B8EcpyQfrM_LgAE14RWYuq54l2yU2vUgN4Se8Qt6mYhidl-KGPcK17f7fOg';
 let dropboxToken = null;
 const DROPBOX_DATA_PATH = '/kinerja_app_data.json';
+
+// --- Variabel untuk Auto-Save ---
+let saveTimeout = null;
+const DEBOUNCE_DELAY = 2500; // 2.5 detik
 
 const navMain = document.getElementById('nav-main');
 const navLeave = document.getElementById('nav-leave');
@@ -163,7 +167,10 @@ function showMessage(message, type, duration = 2000) {
     const iconClasses = 'w-8 h-8'; 
     let baseClasses = 'p-3 rounded-lg inline-flex items-center justify-center';
 
-    if (type === 'error') {
+    if (type === 'saving') {
+        div.className = `${baseClasses} bg-gray-100 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300`;
+        iconHtml = `<i data-lucide="loader-2" class="${iconClasses} animate-spin"></i>`;
+    } else if (type === 'error') {
         div.className = `${baseClasses} bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300`;
         iconHtml = `<i data-lucide="x-circle" class="${iconClasses}"></i>`;
     } else if (type === 'info') {
@@ -178,7 +185,6 @@ function showMessage(message, type, duration = 2000) {
     
     if (type !== 'info') {
         messageContainer.className = 'w-full flex justify-end';
-        div.className += " animate-pulse";
     } else {
         messageContainer.className = '';
     }
@@ -722,8 +728,7 @@ function toggleCutiListEditMode(enable) {
                 management: savedManagement,
                 masinis: savedMasinis
             };
-            saveData();
-            showMessage('Data Cuti Pegawai berhasil diperbarui.', 'success', 5000);
+            saveData(); 
         }
     }
     isCutiListEditMode = enable;
@@ -739,6 +744,7 @@ function toggleCutiListEditMode(enable) {
         editButton.classList.replace('bg-green-600', 'bg-slate-800');
         if (editButtonLabel) editButtonLabel.textContent = "Edit Data";
         if (editButtonIcon) editButtonIcon.setAttribute('data-lucide', 'pencil');
+        showMessage('Data Cuti Pegawai berhasil diperbarui.', 'info', 5000);
     }
     
     addManagementRowButton.classList.toggle('hidden', !enable);
@@ -790,14 +796,13 @@ function toggleKinerjaListEditMode(enable) {
         if (year && month !== "") {
             const key = `${year}-${String(parseInt(month, 10) + 1).padStart(2, '0')}`;
             const savedManagement = saveEmployeeDataFromTable(kinerjaManajemenTableBody);
-            const savedMasinis = saveEmployeeDataFromTable(kinerjaMasinisTableBody); // PERBAIKAN BUG DI SINI
+            const savedMasinis = saveEmployeeDataFromTable(kinerjaMasinisTableBody);
 
             kinerjaPegawai[key] = {
                 management: savedManagement,
                 masinis: savedMasinis
             };
             saveData();
-            showMessage('Data Kinerja Pegawai berhasil diperbarui.', 'success', 5000);
         }
     }
     isKinerjaListEditMode = enable;
@@ -815,6 +820,7 @@ function toggleKinerjaListEditMode(enable) {
         editKinerjaButton.classList.add('bg-slate-800', 'dark:bg-slate-200', 'text-white', 'dark:text-slate-900');
         if (editButtonLabel) editButtonLabel.textContent = "Edit Data";
         if (editButtonIcon) editButtonIcon.setAttribute('data-lucide', 'pencil');
+        showMessage('Data Kinerja Pegawai berhasil diperbarui.', 'info', 5000);
     }
 
     addKinerjaManagementRowButton.classList.toggle('hidden', !enable);
@@ -941,11 +947,18 @@ function loadDataFromLocalFile() {
     input.click();
 }
 
+function triggerAutoSave() {
+    clearTimeout(saveTimeout);
+    showMessage('', 'saving', 0); // Tampilkan ikon "menyimpan" tanpa batas waktu
+    saveTimeout = setTimeout(async () => {
+        await saveDataToDropbox();
+    }, DEBOUNCE_DELAY);
+}
 
 function saveData() {
     saveDataToLocalStorage();
     if (dropboxToken) {
-        saveDataToDropbox();
+        triggerAutoSave();
     }
 }
 
@@ -1018,7 +1031,7 @@ async function loadDataFromDropbox() {
         loadDataFromLocalFile();
         return; 
     }
-    showMessage('Memuat data dari Dropbox...', 'info', 0);
+    showMessage('Memuat data...', 'info', 0);
     try {
         const response = await fetch('https://content.dropboxapi.com/2/files/download', {
             method: 'POST',
@@ -1060,52 +1073,17 @@ function loadDataFromLocalStorage() {
 }
 
 function loadDefaultData() {
-    takenLeaves = [
-        { date: '2025-07-25', name: 'RIYAD FIRDAUS', nipp: '47335', type: 'CT' },
-        { date: '2025-08-17', name: 'PUTUT RESTU WIBOWO', nipp: '50298', type: 'CT' },
-        { date: '2025-07-15', name: 'UJANG SURYA', nipp: '50162', type: 'CP' },
-        { date: '2024-12-24', name: 'APEP ANDRIANTO', nipp: '55037', type: 'CSK' },
-    ];
-    const defaultManagement = [
-        { nama: 'YADI SUPRIADI', nipp: '44662', jabatan: 'KUPT', jumlahCuti: 16 },
-        { nama: 'ROFI NOVIYANUS', nipp: '54706', jabatan: 'P.INSTRUKTUR', jumlahCuti: 14 },
-        { nama: 'ARIEF KURNIAWAN', nipp: '42003', jabatan: 'P.DINASAN', jumlahCuti: 16 },
-        { nama: 'SUHADI ASMARA', nipp: '44726', jabatan: 'P.DINASAN', jumlahCuti: 16 },
-        { nama: 'FAZHAR SEPTIA ILLHAM', nipp: '48552', jabatan: 'P.DINASAN', jumlahCuti: 15 },
-        { nama: 'MUHAMAD FITRA', nipp: '65933', jabatan: 'P.DINASAN', jumlahCuti: 12 },
-    ];
-    const defaultMasinis = [
-        { nama: 'RIYAD FIRDAUS', nipp: '47335', jabatan: 'MASINIS MUDA', jumlahCuti: 15 },
-        { nama: 'UJANG SURYA', nipp: '50162', jabatan: 'MASINIS MUDA', jumlahCuti: 14 },
-        { nama: 'PUTUT RESTU WIBOWO', nipp: '50298', jabatan: 'MASINIS MUDA', jumlahCuti: 14 },
-        { nama: 'UNGGUL HENDRA EKA PRATAMA', nipp: '54730', jabatan: 'MASINIS MUDA', jumlahCuti: 14 },
-        { nama: 'APEP ANDRIANTO', nipp: '55037', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'HERI ISKANDAR', nipp: '55042', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'MURDANI', nipp: '55045', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'ALIF SUHARDIMAN', nipp: '60567', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'NOPIYANA', nipp: '60676', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'JUNAEDI', nipp: '60722', jabatan: 'MASINIS MUDA', jumlahCuti: 13 },
-        { nama: 'ANDRI NURJANA', nipp: '64928', jabatan: 'MASINIS MUDA', jumlahCuti: 12 },
-        { nama: 'ANDRIANA', nipp: '65975', jabatan: 'MASINIS MUDA', jumlahCuti: 12 },
-        { nama: 'ANTO KRISTANTO', nipp: '67833', jabatan: 'MASINIS MUDA', jumlahCuti: 12 },
-        { nama: 'CECEP ARI NUGRAHA', nipp: '68089', jabatan: 'MASINIS MUDA', jumlahCuti: 12 },
-        { nama: 'ARIS SETIAWAN', nipp: '69943', jabatan: 'MASINIS MUDA', jumlahCuti: 12 },
-        { nama: 'ANTONIUS TRI SETYANTO', nipp: '73829', jabatan: 'MASINIS PERTAMA', jumlahCuti: 12 },
-        { nama: 'MAHESA BIMA ADI PANGESTU', nipp: '73831', jabatan: 'MASINIS PERTAMA', jumlahCuti: 12 },
-        { nama: 'FAYZA HAFIZH ARDIANSYAH', nipp: '74162', jabatan: 'MASINIS PERTAMA', jumlahCuti: 12 },
-    ];
-    
+    takenLeaves = [];
+    cutiPegawai = {};
+    kinerjaPegawai = {};
+    kinerjaData = {};
     const baseKey = `${new Date().getFullYear() - 1}-01`;
     const defaultData = {
-        management: JSON.parse(JSON.stringify(defaultManagement)),
-        masinis: JSON.parse(JSON.stringify(defaultMasinis))
+        management: [],
+        masinis: []
     };
-    cutiPegawai = {};
     cutiPegawai[baseKey] = JSON.parse(JSON.stringify(defaultData));
-    kinerjaPegawai = {};
     kinerjaPegawai[baseKey] = JSON.parse(JSON.stringify(defaultData));
-
-    kinerjaData = {};
 }
 
 function handleEmployeeTableClick(event) {
@@ -1143,7 +1121,6 @@ function handleEmployeeTableClick(event) {
     const key = `${yearFilter.value}-${String(parseInt(monthFilter.value, 10) + 1).padStart(2, '0')}`;
     dataSource[key] = currentData; 
 
-    showMessage(`Pegawai "${employeeName}" berhasil dihapus.`, 'success', 5000);
     saveData();
     isCutiListEditMode ? updateAllEmployeeCutiTables() : updateAllKinerjaTables();
 }
@@ -1325,7 +1302,6 @@ tableBody.addEventListener('click', (e) => {
     if (deleteButton && isCutiListEditMode) {
         const dateToDelete = deleteButton.dataset.date;
         const nippToDelete = deleteButton.dataset.nipp;
-        showMessage(`Data cuti tanggal ${formatIndonesianDate(dateToDelete)} berhasil dihapus.`, 'success', 5000);
         takenLeaves = takenLeaves.filter(leave => !(leave.date === dateToDelete && leave.nipp === nippToDelete));
         saveData();
         updateAllUI();
@@ -1393,14 +1369,13 @@ form.addEventListener('submit', function(event) {
         takenLeaves.push({ date: date, name: name.toUpperCase(), nipp: nipp, type: currentLeaveType });
     });
     
-    showMessage(`Pengajuan ${selectedDates.length} hari berhasil.`, 'success', 5000);
+    saveData();
+    updateAllUI();
     
     form.reset();
     selectedDatesText.textContent = 'Pilih tanggal';
     selectedDatesText.classList.add('text-slate-500');
     toggleLeaveFormDetails(false);
-    saveData();
-    updateAllUI();
 });
 
 [kinerjaManajemenTable, kinerjaMasinisTable].forEach(table => {
@@ -1413,11 +1388,6 @@ form.addEventListener('submit', function(event) {
             } else {
                 delete kinerjaData[key];
             }
-            
-            const cell = e.target.closest('td');
-            cell.className = 'p-0 border-l border-slate-200 dark:border-slate-700 text-center font-semibold';
-            if (value === 'H') cell.classList.add('bg-green-200', 'dark:bg-green-900/70');
-            else if (value === 'L' || value === 'LP') cell.classList.add('bg-red-200', 'dark:bg-red-900/70');
             saveData();
             updateMonthlySummary();
         }
@@ -1446,8 +1416,8 @@ saveDropboxTokenBtn.addEventListener('click', () => {
     const token = dropboxTokenInput.value.trim();
     if (token) {
         localStorage.setItem('dropboxToken', token);
-        showMessage('Token berhasil disimpan.', 'success', 5000);
         dropboxToken = token;
+        showMessage('Token berhasil disimpan & data dimuat ulang.', 'info', 5000);
         loadDataFromDropbox();
     } else {
         localStorage.removeItem('dropboxToken');
@@ -1458,8 +1428,9 @@ saveDropboxTokenBtn.addEventListener('click', () => {
 });
 
 saveToDropboxBtn.addEventListener('click', () => {
-    showMessage('Menyimpan data...', 'info', 0);
-    saveDataToDropbox();
+    clearTimeout(saveTimeout); // Batalkan auto-save yang tertunda
+    showMessage('', 'saving', 0); // Tampilkan ikon menyimpan
+    saveDataToDropbox(); // Langsung simpan tanpa menunggu
 });
 
 loadFromDropboxBtn.addEventListener('click', loadDataFromDropbox);
@@ -1474,17 +1445,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         const savedData = localStorage.getItem('kinerjaAppData');
         if (savedData) {
             loadDataFromLocalStorage();
+            updateAllUI();
         } else {
+            // Coba muat dengan token default jika tidak ada data sama sekali
             dropboxToken = DEFAULT_DROPBOX_TOKEN;
-            localStorage.setItem('dropboxToken', dropboxToken);
             await loadDataFromDropbox();
         }
     }
     
-    if (Object.keys(cutiPegawai).length === 0 || Object.keys(kinerjaPegawai).length === 0) {
-        loadDefaultData();
-    }
-
+    // Inisialisasi filter setelah data dimuat
     populateFilters();
     populateSummaryFilters();
     populateCutiTableFilters();
